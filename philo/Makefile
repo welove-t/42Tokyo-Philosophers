@@ -6,7 +6,7 @@
 #    By: terabu <terabu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 10:18:31 by terabu            #+#    #+#              #
-#    Updated: 2023/05/11 14:22:02 by terabu           ###   ########.fr        #
+#    Updated: 2023/05/15 13:42:54 by terabu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 DEBUG_FLAG = -fsanitize=thread
 SRCS =	main.c \
-		put.c \
+		print.c \
+		set_args.c \
+		init.c \
 		timer.c
 
 
