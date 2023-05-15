@@ -6,7 +6,7 @@
 #    By: terabu <terabu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 10:18:31 by terabu            #+#    #+#              #
-#    Updated: 2023/05/15 13:42:54 by terabu           ###   ########.fr        #
+#    Updated: 2023/05/15 16:44:48 by terabu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ SRCS =	main.c \
 		print.c \
 		set_args.c \
 		init.c \
+		do.c \
+		doing.c \
+		philo_thread.c \
 		timer.c
 
 

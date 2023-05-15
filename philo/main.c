@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:58:52 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/15 13:53:23 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/15 17:17:39 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,15 @@
 
 int	main(int argc, char *argv[])
 {
-	// t_philo	philo;
-	// t_args	args;
 	t_env	env;
-	// long long i = 0;
-	// long long s;
 
-	// put_philo();
 	if (argc < 3)
 		return (1);
-
 	set_args(argc, argv, &env);
-	printf("env-args:%d\n", env.args->num_philo);
 	if (init_philo(&env))
 		return (1);
-	printf("env-philo-1:%d\n",env.philo[0].id);
+	create_thread(&env);
+	// printf("env-philo-1:%d\n",env.philo[0].id);
 
 
 	// s = get_time();

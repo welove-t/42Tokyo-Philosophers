@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 10:14:21 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/15 13:53:33 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/15 17:16:23 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ struct s_philo
 	// struct s_data	*data;
 	int				id;
 	t_env			*env;
+	t_args			*args;
 	long			cnt_eat;
 	time_t			t_last_eat;
 	pthread_t		philo_thread;
@@ -54,10 +55,15 @@ struct s_args
 };
 
 
-
+int			print_msg(t_philo *philo, char *msg);
 void 		put_philo();
 long long	get_time();
 int			set_args(int argc, char *argv[], t_env *env);
 int			init_philo(t_env *env);
+int			create_thread(t_env *env);
+
+int			do_eat(t_philo *philo);
+void		do_wait(t_philo *philo, time_t wait_time);
+
 
 #endif
