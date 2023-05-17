@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:47:32 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/17 10:50:30 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/17 14:00:50 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	philo_one(t_philo *philo)
 {
 	print_msg(philo, "has taken a fork");
-	do_wait(philo, philo->args->t_die);
+	do_wait(philo->args->t_die);
 	print_msg(philo, "died");
 }
 
@@ -44,7 +44,6 @@ void	*philo_func(void *arg)
 	return (NULL);
 }
 
-
 int	create_thread(t_env *env)
 {
 	int		i;
@@ -60,13 +59,13 @@ int	create_thread(t_env *env)
 			NULL, philo_func, &env->philo[i]);
 		i++;
 	}
-	// pthread_env(&env->monitor_thread, NULL, monitor_func, env);
+	pthread_create(&env->master_thread, NULL, master_func, env);
 	i = 0;
 	while (i < env->args->num_philo)
 	{
 		pthread_join(env->philo[i].philo_thread, NULL);
 		i++;
 	}
-	// pthread_join(env->monitor_thread, NULL);
+	pthread_join(env->master_thread, NULL);
 	return (0);
 }

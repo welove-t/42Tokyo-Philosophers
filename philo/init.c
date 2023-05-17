@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 12:27:10 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/17 10:49:38 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/17 13:56:27 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ int	init_philo(t_env *env)
 		}
 		i++;
 	}
+	env->is_end_game = false;
+	pthread_mutex_init(&env->mtx_end_game, NULL);
 	return 0;
 }
 
