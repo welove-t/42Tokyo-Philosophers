@@ -6,16 +6,11 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:17:54 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/15 17:13:41 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/17 10:51:18 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
-// int get_forks(t_philo *philo)
-// {
-
-// }
 
 void	do_wait(t_philo *philo, time_t wait_time)
 {
@@ -29,18 +24,33 @@ void	do_wait(t_philo *philo, time_t wait_time)
 }
 
 
-int	do_eat(t_philo *philo)
-
+void	eat_counter(t_philo *philo)
 {
-	(void) philo;
-	// if (get_forks(philo))
-	// 	return (1);
-	// if (print_message(philo, MESSAGE_EAT))
-	// 	return (unlock_forks(philo, 1));
-	// if (eat_timestamp_and_wait(philo))
-	// 	return (unlock_forks(philo, 1));
-	// if (eat_countnum(philo))
-	// 	return (unlock_forks(philo, 1));
-	// unlock_forks(philo, RET_SUCCESS);
+	philo->cnt_eat++;
+}
+
+int	do_eat(t_philo *philo)
+{
+	if (philo->id == 2)
+		usleep(1000);
+	if (get_forks(philo))
+		return (1);
+	print_msg(philo, "is eating");
+	do_wait(philo, philo->args->t_eat);
+	return (0);
+}
+
+int	do_sleep(t_philo *philo)
+{
+	if (put_forks(philo))
+		return (1);
+	print_msg(philo, "is sleeping");
+	do_wait(philo, philo->args->t_sleep);
+	return (0);
+}
+
+int do_think(t_philo *philo)
+{
+	print_msg(philo, "is thinking");
 	return (0);
 }

@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_args.c                                         :+:      :+:    :+:   */
+/*   fork.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/14 12:32:20 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/17 09:55:54 by terabu           ###   ########.fr       */
+/*   Created: 2023/05/17 10:22:31 by terabu            #+#    #+#             */
+/*   Updated: 2023/05/17 10:46:53 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	set_args(int argc, char *argv[], t_env *env)
+int get_forks(t_philo *philo)
 {
-	(void) argc;
-	env->args = malloc(sizeof(t_args) * 1);
-	env->args->num_philo = atoi(argv[1]);
-	env->args->t_die = atoi(argv[2]);
-	env->args->t_eat = atoi(argv[3]);
-	env->args->t_sleep = atoi(argv[4]);
+
+	pthread_mutex_lock(philo->mtx_right_fork);
+	print_msg(philo, "has taken a fork");
+	pthread_mutex_lock(philo->mtx_left_fork);
+	print_msg(philo, "has taken a fork");
+	return (0);
+}
+
+int put_forks(t_philo *philo)
+{
+	pthread_mutex_unlock(philo->mtx_right_fork);
+	pthread_mutex_unlock(philo->mtx_left_fork);
 	return (0);
 }

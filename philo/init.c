@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 12:27:10 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/15 16:52:01 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/17 10:49:38 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,16 @@ int	init_philo(t_env *env)
 		env->philo[i].args = env->args;
 		env->philo[i].id = i + 1;
 		env->philo[i].cnt_eat = 0;
-		env->philo[i].mtx_left_fork = &env->mtx_fork[i];
-		// env->philo[i].mtx_right_fork = &env->mtx_fork[i];
+		if (i == 0)
+		{
+			env->philo[i].mtx_left_fork = &env->mtx_fork[0];
+			env->philo[i].mtx_right_fork = &env->mtx_fork[1];
+		}
+		if (i == 1)
+		{
+			env->philo[i].mtx_left_fork = &env->mtx_fork[1];
+			env->philo[i].mtx_right_fork = &env->mtx_fork[0];
+		}
 		i++;
 	}
 	return 0;

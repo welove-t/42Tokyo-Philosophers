@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 10:14:21 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/15 17:16:23 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/17 10:33:31 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ struct s_env
 	time_t			t_start;
 	pthread_mutex_t	*mtx_meal;
 	pthread_mutex_t	*mtx_fork;
+	pthread_t		observer_thread;
 };
 struct s_args
 {
@@ -63,7 +64,14 @@ int			init_philo(t_env *env);
 int			create_thread(t_env *env);
 
 int			do_eat(t_philo *philo);
+int			do_sleep(t_philo *philo);
+int			do_think(t_philo *philo);
 void		do_wait(t_philo *philo, time_t wait_time);
+
+
+// fork
+int get_forks(t_philo *philo);
+int put_forks(t_philo *philo);
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:47:32 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/15 17:12:57 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/17 10:50:30 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ void	*philo_func(void *arg)
 	{
 		if (do_eat(philo))
 			break ;
-		// if (philo_sleep(philo))
-		// 	break ;
-		// if (philo_think(philo))
-		// 	break ;
+		if (do_sleep(philo))
+			break ;
+		if (do_think(philo))
+			break ;
 	}
 	return (NULL);
 }
