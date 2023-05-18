@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 10:14:21 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/17 15:48:25 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/18 14:02:47 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,10 @@ void		do_wait(time_t wait_time);
 
 
 // fork
-int get_forks(t_philo *philo);
-int put_forks(t_philo *philo);
+void	pass_right_fork(t_env *env, int i);
+void	pass_left_fork(t_env *env, int i);
+int 	get_forks(t_philo *philo);
+int 	put_forks(t_philo *philo);
 
 // thread
 void	*master_func(void *arg);
