@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:53:26 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/17 14:30:09 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/18 15:30:52 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,20 @@ int	check_eat_time(t_env *env)
 	return (0);
 }
 
+int	check_eat_cnt(t_env *env)
+{
+	int	i;
+
+	i = 0;
+	while (i < env->args->num_philo)
+	{
+		if (env->philo[i].cnt_eat < env->args->num_must_eat)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 void	*master_func(void *arg)
 {
 	t_env	*env;
@@ -42,6 +56,13 @@ void	*master_func(void *arg)
 	while (1)
 	{
 		if (check_eat_time(env))
+		{
+			pthread_mutex_lock(&env->mtx_end_game);
+			env->is_end_game = true;
+			pthread_mutex_unlock(&env->mtx_end_game);
+			break ;
+		}
+		if (check_eat_cnt(env))
 		{
 			pthread_mutex_lock(&env->mtx_end_game);
 			env->is_end_game = true;

@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:17:54 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/18 15:08:33 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/18 15:21:46 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,13 @@ void	do_wait(time_t wait_time)
 	return ;
 }
 
-
-void	eat_counter(t_philo *philo)
-{
-	philo->cnt_eat++;
-}
-
 int	do_eat(t_philo *philo)
 {
 	if (get_forks(philo))
 		return (1);
 	if (print_msg(philo, "is eating"))
 		return (1);
+	philo->cnt_eat++;
 	philo->t_last_eat = get_time();
 	do_wait(philo->args->t_eat);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 10:14:21 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/18 14:02:47 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/18 15:26:04 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ struct s_args
 	time_t	t_die;
 	time_t	t_eat;
 	time_t	t_sleep;
+	long	num_must_eat;
 };
 
 
