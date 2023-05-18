@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:47:32 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/17 14:00:50 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/18 15:08:14 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void	*philo_func(void *arg)
 		philo_one(philo);
 		return (NULL);
 	}
-	// if (philo->id % 2 == 0)
-		// usleep(200);
 	while (1)
 	{
 		if (do_eat(philo))

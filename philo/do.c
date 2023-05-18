@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:17:54 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/17 13:49:22 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/18 15:08:33 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void	eat_counter(t_philo *philo)
 
 int	do_eat(t_philo *philo)
 {
-	if (philo->id == 2)
-		usleep(1000);
 	if (get_forks(philo))
 		return (1);
 	if (print_msg(philo, "is eating"))
