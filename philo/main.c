@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:58:52 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/17 12:51:49 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/21 11:35:33 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ int	main(int argc, char *argv[])
 {
 	t_env	env;
 
-	if (argc < 3)
+	if (init_args(argc, argv, &env))
 		return (1);
-	set_args(argc, argv, &env);
 	if (init_philo(&env))
 		return (1);
 	create_thread(&env);
