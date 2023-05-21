@@ -6,30 +6,12 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:58:52 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/21 15:07:50 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/22 07:58:20 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "philo.h"
 
-int	release(t_env *env)
-{
-	int	num_philo;
-	int	i;
-
-	num_philo = env->args->num_philo;
-	i = 0;
-	free(env->args);
-	free(env->mtx_fork);
-	free(env->mtx_meal);
-	free(env->philo);
-	// while (i < num_philo)
-	// {
-	// 	free()
-	// 	i++;
-	// }
-	return (0);
-}
 
 int	main(int argc, char *argv[])
 {
@@ -39,9 +21,10 @@ int	main(int argc, char *argv[])
 		return (1);
 	if (init_philo(&env))
 		return (1);
-	create_thread(&env);
-	release(&env);
-
+	if (create_thread(&env))
+		return (1);
+	if (release(&env))
+		return (1);
 	return (0);
 }
 

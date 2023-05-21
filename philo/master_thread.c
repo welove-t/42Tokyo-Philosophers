@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:53:26 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/21 16:02:58 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/22 07:55:19 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	do_kill(t_philo philo)
 {
-	// print_msg(&philo, "died");
 	pthread_mutex_lock(&philo.env->mtx_print);
 	printf("%lld %d %s\n", get_time() - philo.env->t_start, philo.id, "died");
 	pthread_mutex_lock(&philo.env->mtx_end_game);
@@ -69,7 +68,6 @@ void	*master_func(void *arg)
 	env = (t_env *)arg;
 	while (1)
 	{
-		// usleep(1000);
 		if (check_eat_time(env))
 			break ;
 		if (env->is_must_eat && check_eat_cnt(env))

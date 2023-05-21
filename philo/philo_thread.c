@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:47:32 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/21 16:12:04 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/22 07:45:44 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	create_thread(t_env *env)
 
 	i = 0;
 	env->t_start = get_time();
-	if (!env->t_start)
+	if (env->t_start < 0)
 		return (1);
 	if (env->args->num_philo == 1)
 	{

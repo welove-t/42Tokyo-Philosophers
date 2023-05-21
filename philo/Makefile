@@ -6,7 +6,7 @@
 #    By: terabu <terabu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 10:18:31 by terabu            #+#    #+#              #
-#    Updated: 2023/05/21 11:42:24 by terabu           ###   ########.fr        #
+#    Updated: 2023/05/22 07:43:24 by terabu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS =	main.c \
 		init_philo.c \
 		do.c \
 		fork.c \
+		release.c \
 		philo_thread.c \
 		master_thread.c \
 		philo_atol.c \
