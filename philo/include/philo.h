@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 10:14:21 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/21 15:49:08 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/21 15:58:12 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ struct s_env
 	pthread_mutex_t	*mtx_fork;
 	pthread_t		master_thread;
 	bool			is_end_game;
+	bool			is_must_eat;
 	pthread_mutex_t	mtx_end_game;
 	pthread_mutex_t	mtx_print;
 };

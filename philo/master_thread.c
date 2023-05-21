@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:53:26 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/21 15:53:48 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/21 16:02:58 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,8 @@ void	*master_func(void *arg)
 	{
 		// usleep(1000);
 		if (check_eat_time(env))
-		{
 			break ;
-		}
-		if (check_eat_cnt(env))
+		if (env->is_must_eat && check_eat_cnt(env))
 		{
 			pthread_mutex_lock(&env->mtx_end_game);
 			env->is_end_game = true;

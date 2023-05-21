@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:47:32 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/21 15:34:29 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/21 16:12:04 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,6 @@ void	*philo_func(void *arg)
 	t_philo	*philo;
 
 	philo = (t_philo *)arg;
-	if (philo->args->num_philo == 1)
-	{
-		philo_one(philo);
-		return (NULL);
-	}
 	while (1)
 	{
 		if (philo->id % 2 == 0)
@@ -52,6 +47,11 @@ int	create_thread(t_env *env)
 	env->t_start = get_time();
 	if (!env->t_start)
 		return (1);
+	if (env->args->num_philo == 1)
+	{
+		philo_one(env->philo);
+		return (0);
+	}
 	while (i < env->args->num_philo)
 	{
 		env->philo[i].t_last_eat = env->t_start;
