@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:53:26 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/21 15:44:49 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/21 15:53:48 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	*master_func(void *arg)
 	env = (t_env *)arg;
 	while (1)
 	{
-		usleep(1000);
+		// usleep(1000);
 		if (check_eat_time(env))
 		{
 			break ;
