@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 12:27:10 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/18 14:08:35 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/18 15:31:38 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,6 @@ static int	init_fork_meal(t_env *env)
 	return (0);
 }
 
-// static int init_left_fork(t_philo *philo)
-// {
-
-// }
-
-// static int init_right_fork(t_philo *philo)
-// {
-
-// }
 
 int	init_philo(t_env *env)
 {
