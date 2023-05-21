@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 10:14:21 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/21 11:55:17 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/21 15:49:08 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ struct s_env
 	pthread_t		master_thread;
 	bool			is_end_game;
 	pthread_mutex_t	mtx_end_game;
+	pthread_mutex_t	mtx_print;
 };
 struct s_args
 {
