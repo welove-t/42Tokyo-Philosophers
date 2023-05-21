@@ -6,7 +6,7 @@
 #    By: terabu <terabu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 10:18:31 by terabu            #+#    #+#              #
-#    Updated: 2023/05/21 10:57:42 by terabu           ###   ########.fr        #
+#    Updated: 2023/05/21 11:42:24 by terabu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ RM = rm -rf
 DEBUG_FLAG = -fsanitize=thread
 SRCS =	main.c \
 		print.c \
-		set_args.c \
-		init.c \
+		init_args.c \
+		init_philo.c \
 		do.c \
 		fork.c \
 		philo_thread.c \
