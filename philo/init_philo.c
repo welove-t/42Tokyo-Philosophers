@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 12:27:10 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/21 11:42:15 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/21 15:50:18 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,11 @@ int	init_philo(t_env *env)
 		i++;
 	}
 	env->is_end_game = false;
-	pthread_mutex_init(&env->mtx_end_game, NULL);
+	if (pthread_mutex_init(&env->mtx_end_game, NULL))
+		return (1);
+
+	if (pthread_mutex_init(&env->mtx_print, NULL))
+		return (1);
 	return 0;
 }
 

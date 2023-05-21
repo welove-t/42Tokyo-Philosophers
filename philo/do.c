@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:17:54 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/18 15:21:46 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/21 14:59:18 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ int	do_eat(t_philo *philo)
 		return (1);
 	if (print_msg(philo, "is eating"))
 		return (1);
+	pthread_mutex_lock(&philo->env->mtx_meal[philo->id - 1]);
 	philo->cnt_eat++;
 	philo->t_last_eat = get_time();
+	pthread_mutex_unlock(&philo->env->mtx_meal[philo->id - 1]);
 	do_wait(philo->args->t_eat);
 	return (0);
 }
