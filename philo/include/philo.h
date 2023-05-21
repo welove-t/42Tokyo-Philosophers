@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 10:14:21 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/18 15:26:04 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/21 10:55:23 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ int 	put_forks(t_philo *philo);
 
 // thread
 void	*master_func(void *arg);
+
+long	philo_atol(const char *nptr);
 
 #endif
