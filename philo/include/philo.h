@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 10:14:21 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/22 10:02:47 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/22 10:17:41 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,12 @@ struct s_args
 	long	num_must_eat;
 };
 
-int			print_msg(t_philo *philo, char *msg);
-int			print_error(char *msg);
-long long	get_time(void);
+// init
 int			init_args(int argc, char *argv[], t_env *env);
 int			init_philo(t_env *env);
-int			create_thread(t_env *env);
+long		philo_atol(const char *nptr);
 
+// action
 int			do_eat(t_philo *philo);
 int			do_sleep(t_philo *philo);
 int			do_think(t_philo *philo);
@@ -79,9 +78,16 @@ int			put_forks(t_philo *philo);
 
 // thread
 void		*master_func(void *arg);
+int			create_thread(t_env *env);
 
-long		philo_atol(const char *nptr);
+// print
+int			print_msg(t_philo *philo, char *msg);
+int			print_error(char *msg);
 
+// timer
+long long	get_time(void);
+
+// release
 int			release(t_env *env);
 
 #endif
