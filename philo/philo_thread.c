@@ -6,21 +6,21 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:47:32 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/22 07:45:44 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/22 10:02:06 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	philo_one(t_philo *philo)
+static int	philo_one(t_philo *philo)
 {
 	print_msg(philo, "has taken a fork");
 	do_wait(philo->args->t_die);
 	print_msg(philo, "died");
+	return (0);
 }
 
-
-void	*philo_func(void *arg)
+static void	*philo_func(void *arg)
 {
 	t_philo	*philo;
 
@@ -48,10 +48,7 @@ int	create_thread(t_env *env)
 	if (env->t_start < 0)
 		return (1);
 	if (env->args->num_philo == 1)
-	{
-		philo_one(env->philo);
-		return (0);
-	}
+		return (philo_one(env->philo));
 	while (i < env->args->num_philo)
 	{
 		env->philo[i].t_last_eat = env->t_start;

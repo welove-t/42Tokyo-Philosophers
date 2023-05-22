@@ -6,11 +6,11 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 07:08:51 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/22 07:38:50 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/22 10:03:06 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "philo.h"
+#include "philo.h"
 
 static void	destroy_mtx(t_env *env)
 {
@@ -34,7 +34,6 @@ static void	free_env(t_env *env)
 	free(env->mtx_meal);
 	free(env->philo);
 }
-
 
 int	release(t_env *env)
 {

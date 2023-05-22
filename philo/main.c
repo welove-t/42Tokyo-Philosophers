@@ -6,12 +6,11 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:58:52 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/22 07:58:20 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/22 10:01:33 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "philo.h"
-
+#include "philo.h"
 
 int	main(int argc, char *argv[])
 {

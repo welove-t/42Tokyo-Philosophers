@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:17:54 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/21 14:59:18 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/22 10:03:23 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	do_sleep(t_philo *philo)
 	return (0);
 }
 
-int do_think(t_philo *philo)
+int	do_think(t_philo *philo)
 {
 	if (print_msg(philo, "is thinking"))
 		return (1);

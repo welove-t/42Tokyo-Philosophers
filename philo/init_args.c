@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 12:32:20 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/22 09:45:49 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/22 10:04:05 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ static int	check_argc(int argc)
 	return (0);
 }
 
-static int set_args(int argc, char *argv[], t_env *env)
+static int	set_args(int argc, char *argv[], t_env *env)
 {
 	env->args->num_philo = philo_atol(argv[1]);
 	env->args->t_die = philo_atol(argv[2]);
 	env->args->t_eat = philo_atol(argv[3]);
 	env->args->t_sleep = philo_atol(argv[4]);
-	if (env->args->num_philo == -1 || env->args->t_die == -1 ||
-		env->args->t_eat == -1 || env->args->t_sleep == -1)
+	if (env->args->num_philo == -1 || env->args->t_die == -1
+		|| env->args->t_eat == -1 || env->args->t_sleep == -1)
 		return (print_error("bad argument"));
 	env->is_must_eat = false;
 	if (argc == 6)

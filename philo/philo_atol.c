@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:53:50 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/21 10:55:04 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/22 10:01:57 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	check_overflow(char c, long n)
 {
 	if (((n > LONG_MAX / 10 && c)
-		 || (n == LONG_MAX / 10 && c - '0' > LONG_MAX % 10)))
+			|| (n == LONG_MAX / 10 && c - '0' > LONG_MAX % 10)))
 		return (1);
 	return (0);
 }

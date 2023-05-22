@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 12:27:10 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/22 09:47:39 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/22 10:01:09 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ static int	init_fork_meal(t_env *env)
 	}
 	return (0);
 }
-
 
 int	init_philo(t_env *env)
 {
@@ -58,6 +57,5 @@ int	init_philo(t_env *env)
 		return (print_error("pthread_mutex_init failed\n"));
 	if (pthread_mutex_init(&env->mtx_print, NULL))
 		return (print_error("pthread_mutex_init failed\n"));
-	return 0;
+	return (0);
 }
-

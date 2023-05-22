@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 12:15:50 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/22 09:51:47 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/22 10:02:19 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	print_error(char *msg)
 	return (1);
 }
 
-int check_end_game(t_env *env)
+int	check_end_game(t_env *env)
 {
 	pthread_mutex_lock(&env->mtx_end_game);
 	if (env->is_end_game)
@@ -37,5 +37,5 @@ int	print_msg(t_philo *philo, char *msg)
 	pthread_mutex_lock(&philo->env->mtx_print);
 	printf("%lld %d %s\n", get_time() - philo->env->t_start, philo->id, msg);
 	pthread_mutex_unlock(&philo->env->mtx_print);
-	return 0;
+	return (0);
 }
