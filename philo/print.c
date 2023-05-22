@@ -6,11 +6,17 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 12:15:50 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/21 13:49:32 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/22 09:51:47 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+int	print_error(char *msg)
+{
+	printf("%s\n", msg);
+	return (1);
+}
 
 int check_end_game(t_env *env)
 {

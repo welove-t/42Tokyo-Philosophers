@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 10:14:21 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/22 07:09:19 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/22 09:51:37 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ struct s_args
 
 
 int			print_msg(t_philo *philo, char *msg);
+int			print_error(char *msg);
 void 		put_philo();
 long long	get_time();
 int			init_args(int argc, char *argv[], t_env *env);

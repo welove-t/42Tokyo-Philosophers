@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 12:27:10 by terabu            #+#    #+#             */
-/*   Updated: 2023/05/21 15:50:18 by terabu           ###   ########.fr       */
+/*   Updated: 2023/05/22 09:47:39 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ static int	init_fork_meal(t_env *env)
 	env->mtx_fork = malloc(sizeof(pthread_mutex_t) * env->args->num_philo);
 	env->mtx_meal = malloc(sizeof(pthread_mutex_t) * env->args->num_philo);
 	if (!env->mtx_fork || !env->mtx_meal)
-		return (1);
+		return (print_error("malloc failed\n"));
 	i = 0;
 	while (i < env->args->num_philo)
 	{
 		if (pthread_mutex_init(&env->mtx_fork[i], NULL))
-			return (1);
+			return (print_error("pthread_mutex_init failed\n"));
 		if (pthread_mutex_init(&env->mtx_meal[i], NULL))
-			return (1);
+			return (print_error("pthread_mutex_init failed\n"));
 		i++;
 	}
 	return (0);
@@ -41,7 +41,7 @@ int	init_philo(t_env *env)
 		return (1);
 	env->philo = malloc(sizeof(t_philo) * env->args->num_philo);
 	if (!env->philo)
-		return (1);
+		return (print_error("malloc failed\n"));
 	i = 0;
 	while (i < env->args->num_philo)
 	{
@@ -55,10 +55,9 @@ int	init_philo(t_env *env)
 	}
 	env->is_end_game = false;
 	if (pthread_mutex_init(&env->mtx_end_game, NULL))
-		return (1);
-
+		return (print_error("pthread_mutex_init failed\n"));
 	if (pthread_mutex_init(&env->mtx_print, NULL))
-		return (1);
+		return (print_error("pthread_mutex_init failed\n"));
 	return 0;
 }
 
